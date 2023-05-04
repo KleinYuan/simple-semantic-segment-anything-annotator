@@ -59,3 +59,25 @@ make annotate-single-gpu
 ```
 
 Then, you will get all output in the [output](output) folder. That's it.
+
+
+### Re-draw The Labels
+
+If you have a really dense objects, the visualization can be hard to tell. 
+![demo_semantic](./output/demo_semantic.png)
+
+I have prepared one script
+[simple_visualizer.py](./simple_visualizer.py) to parse the json and re-draw the image.
+
+Simply do:
+
+```
+python simple_visualizer.py redraw \
+--image_path=input/demo.jpg \
+--json_path=output/demo_semantic.json \
+--classes_to_keep="[\"person\"]"
+```
+
+And you will see that a new visualization is available:
+
+![demo_semantic](./output/demo_semantic.json.parsed.png)

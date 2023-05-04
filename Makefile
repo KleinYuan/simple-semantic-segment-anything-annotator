@@ -30,6 +30,7 @@ run: build-image
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v ${PWD}/input:/home/Semantic-Segment-Anything/input \
 	-v ${PWD}/output:/home/Semantic-Segment-Anything/output \
+	-v ${PWD}/simple_visualizer.py:/home/Semantic-Segment-Anything/simple_visualizer.py \
 	-e DISPLAY=$DISPLAY \
 	--name=s3aa \
 	--ipc=host -it s3aa:v0

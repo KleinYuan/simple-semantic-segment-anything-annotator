@@ -26,8 +26,9 @@ ENV PATH /opt/conda/envs/ssa/bin:$PATH
 RUN python -m spacy download en_core_web_sm
 # next, install meta segment anything
 RUN pip install git+https://github.com/facebookresearch/segment-anything.git
-RUN pip install opencv-python pycocotools matplotlib onnxruntime onnx
+RUN pip install opencv-python pycocotools matplotlib onnxruntime onnx fire
 # Last, download the checkpoints
 COPY download.sh /home/Semantic-Segment-Anything/
 COPY Makefile /home/Semantic-Segment-Anything/
+COPY simple_visualizer.py /home/Semantic-Segment-Anything/
 RUN bash download.sh
