@@ -41,5 +41,5 @@ annotate-single-gpu:
 	--out_dir=output \
 	--world_size=1 \
 	--save_img \
-	--sam 
+	--sam \
 	--ckpt_path=ckp/sam_vit_h_4b8939.pth
